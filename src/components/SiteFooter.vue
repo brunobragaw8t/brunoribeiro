@@ -6,7 +6,7 @@ import SocialIcons from "./SocialIcons.vue";
 
 <template>
   <div
-    class="relative z-0 py-12 bg-[url('/footer-bg.webp')] bg-center bg-cover text-white text-center"
+    class="relative z-0 py-12 bg-[url('/img/footer-bg.webp')] bg-center bg-cover text-white text-center"
   >
     <div
       class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30"

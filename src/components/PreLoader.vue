@@ -27,13 +27,13 @@ const logoOpacity = computed(() => {
 
     <div class="relative z-1">
       <img
-        src="@/assets/img/icon-40x40--inverted.png"
+        src="/img/icon-40x40--inverted.png"
         alt="Bruno Ribeiro Film icon"
         :class="`absolute top-2.5 right-[2.125rem] animate-spin ${logoOpacity} duration-1000`"
       />
 
       <img
-        src="@/assets/img/logo-208x151--inverted.png"
+        src="/img/logo-208x151--inverted.png"
         alt="Bruno Ribeiro Film logo"
         :class="`${logoOpacity} duration-1000`"
       />

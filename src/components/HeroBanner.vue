@@ -53,7 +53,7 @@ const closeShowreel = () => {
     ></div>
 
     <img
-      src="@/assets/img/hero.webp"
+      src="/img/hero.webp"
       alt="Bruno Ribeiro Film showreel"
       class="block md:hidden absolute top-0 let-0 z-10 w-full h-full object-cover"
     />
