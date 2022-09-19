@@ -18,3 +18,10 @@ export interface Project {
   videoId: string;
   categories: Array<number>;
 }
+
+export interface Client {
+  id: number;
+  title: string;
+  image: string;
+  url: string;
+}
