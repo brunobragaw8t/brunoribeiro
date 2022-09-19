@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { apiUrl } from "@/constants";
+import { getYouTubeId } from "@/helpers";
 import type { Project } from "@/interfaces";
 import { ref, computed } from "vue";
 import PortfolioItem from "./PortfolioItem.vue";
@@ -22,7 +23,7 @@ fetch(`${apiUrl}/project/?order=desc`)
           id: item.id,
           title: item.title.rendered,
           image: item.acf.image.url,
-          video: item.acf.video,
+          videoId: getYouTubeId(item.acf.video),
           categories: item.acf.categories.map((cat: any) => cat.term_id),
         });
       });

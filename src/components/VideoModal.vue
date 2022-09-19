@@ -10,7 +10,7 @@ defineProps({
     v-if="isVisible"
     class="flex items-center justify-center fixed top-0 left-0 z-50 px-4 w-full h-full bg-black bg-opacity-75"
   >
-    <div class="relative w-[48rem]">
+    <div class="relative w-[62rem] max-w-full">
       <button
         class="flex items-center justify-center absolute right-0 bottom-full w-9 h-9 group"
         @click="$emit('closeModal')"

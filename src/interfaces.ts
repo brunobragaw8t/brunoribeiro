@@ -15,6 +15,6 @@ export interface Project {
   id: number;
   title: string;
   image: string;
-  video: string;
+  videoId: string;
   categories: Array<number>;
 }

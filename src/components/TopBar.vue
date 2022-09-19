@@ -13,7 +13,7 @@ fetch(`${apiUrl}/social_icon/`)
     if (data) {
       data.forEach((item: any) => {
         socialIcons.value.push({
-          title: item.title,
+          title: item.title.rendered,
           url: item.acf.url,
           image: item.acf.image.url,
         });
