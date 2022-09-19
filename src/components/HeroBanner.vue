@@ -63,13 +63,15 @@ const closeShowreel = () => {
     ></div>
 
     <div
-      class="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2 z-30 px-4 w-full"
+      class="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2 z-30 px-4 w-[48rem] max-w-full"
     >
-      <h1 class="mb-6 text-white text-center text-2xl font-bold">
+      <h1
+        class="mb-6 text-white text-center text-2xl font-extralight md:text-6xl md:leading-tight"
+      >
         Videoclips, Institucionais / Eventos e Fotografia
       </h1>
 
-      <div class="flex justify-center gap-4">
+      <div class="flex justify-center gap-6">
         <MainButton @click="displayShowreel = true">Ver Showreel</MainButton>
         <MainButton>Ver Portfólio</MainButton>
       </div>
