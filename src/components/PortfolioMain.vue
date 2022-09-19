@@ -27,7 +27,7 @@ fetch(`${apiUrl}/project_category/?order=desc`)
 </script>
 
 <template>
-  <div class="py-14">
+  <div class="py-14" id="portfolio">
     <ContentWrapper>
       <div class="flex justify-center gap-4 mb-8">
         <button

@@ -43,6 +43,20 @@ const displayShowreel = ref(false);
 const closeShowreel = () => {
   displayShowreel.value = false;
 };
+
+const scrollToPortfolio = () => {
+  const elm = document.querySelector("#portfolio");
+
+  if (!elm) {
+    return;
+  }
+
+  const y = elm.getBoundingClientRect().top + window.scrollY;
+  window.scroll({
+    top: y,
+    behavior: "smooth",
+  });
+};
 </script>
 
 <template>
@@ -73,7 +87,7 @@ const closeShowreel = () => {
 
       <div class="flex justify-center gap-6">
         <MainButton @click="displayShowreel = true">Ver Showreel</MainButton>
-        <MainButton>Ver Portfólio</MainButton>
+        <MainButton @click="scrollToPortfolio">Ver Portfólio</MainButton>
       </div>
     </div>
   </div>
