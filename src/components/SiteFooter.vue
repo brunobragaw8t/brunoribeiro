@@ -20,6 +20,7 @@ import SocialIcons from "./SocialIcons.vue";
           title="Email"
           icon="far fa-envelope"
           label="brunoribeiromedia@gmail.com"
+          :displayLabel="true"
           url="mailto:brunoribeiromedia@gmail.com"
         />
       </div>

@@ -7,6 +7,10 @@ defineProps({
     type: String,
     default: "",
   },
+  displayLabel: {
+    type: Boolean,
+    default: false,
+  },
   url: {
     type: String,
   },
@@ -40,8 +44,15 @@ defineProps({
     </div>
 
     <span
-      v-if="label"
+      v-if="label && !displayLabel"
       class="hidden sm:block ml-2 text-white transition-all group-hover:text-primary"
+    >
+      {{ label }}
+    </span>
+
+    <span
+      v-if="label && displayLabel"
+      class="ml-2 text-white transition-all group-hover:text-primary"
     >
       {{ label }}
     </span>
