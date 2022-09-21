@@ -16,7 +16,7 @@ const props = defineProps({
 const projects = ref([] as Array<Project>);
 const projectsLoaded = ref(false);
 
-fetch(`${apiUrl}/project/?order=desc`)
+fetch(`${apiUrl}/project/?order=desc&per_page=100`)
   .then((res) => res.json())
   .then((data) => {
     if (data) {
