@@ -17,7 +17,9 @@ defineProps({
     v-if="isVisible"
     class="flex items-center justify-center fixed top-0 left-0 z-50 px-4 w-full h-full bg-black bg-opacity-75"
   >
-    <div class="relative w-[62rem] max-w-full">
+    <div
+      :class="`relative ${videoId ? 'w-[62rem]' : 'max-w-[62rem] max-h-[90%]'}`"
+    >
       <button
         class="flex items-center justify-center absolute right-0 bottom-full w-9 h-9 group"
         @click="$emit('closeModal')"
@@ -38,7 +40,9 @@ defineProps({
         ></iframe>
       </div>
 
-      <img v-else :src="image" class="block w-full h-auto" />
+      <div v-else class="flex items-center justify-center">
+        <img :src="image" class="w-full h-auto max-h-[90vh]" />
+      </div>
     </div>
   </div>
 </template>
