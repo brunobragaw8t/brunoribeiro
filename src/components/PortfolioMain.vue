@@ -36,15 +36,13 @@ fetch(`${apiUrl}/project_category/?order=desc`)
           class="relative z-0"
           @click="selectedCat = category.id"
         >
-          <span class="relative z-10 font-bold text-sm uppercase">
+          <span
+            :class="`relative z-10 font-bold text-sm uppercase transition-all ${
+              selectedCat === category.id ? 'text-primary' : ''
+            }`"
+          >
             {{ category.title }}
           </span>
-
-          <div
-            :class="`absolute bottom-[0.125rem] left-0 z-0 h-2 bg-primary transition-all ${
-              selectedCat === category.id ? 'w-full' : 'w-0'
-            }`"
-          ></div>
         </button>
       </div>
 
