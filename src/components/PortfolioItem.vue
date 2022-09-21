@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { Project } from "@/interfaces";
 import { ref } from "vue";
-import VideoModal from "./VideoModal.vue";
-import ImageModal from "./ImageModal.vue";
 import MediaModal from "./MediaModal.vue";
 
 defineProps({
