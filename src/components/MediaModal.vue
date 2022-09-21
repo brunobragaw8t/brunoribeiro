@@ -1,7 +1,11 @@
 <script setup lang="ts">
 defineProps({
   isVisible: Boolean,
-  videoId: String,
+  videoId: {
+    required: false,
+    type: String,
+  },
+  image: String,
 });
 </script>
 
@@ -20,7 +24,7 @@ defineProps({
         ></i>
       </button>
 
-      <div class="relative pb-[56.25%]">
+      <div v-if="videoId" class="relative pb-[56.25%]">
         <iframe
           :src="`https://www.youtube.com/embed/${videoId}?autoplay=1`"
           title="YouTube video player"
@@ -30,6 +34,8 @@ defineProps({
           class="absolute top-0 left-0 w-full h-full"
         ></iframe>
       </div>
+
+      <img v-else :src="image" class="block w-full h-auto" />
     </div>
   </div>
 </template>

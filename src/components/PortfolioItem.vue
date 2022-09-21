@@ -3,6 +3,7 @@ import type { Project } from "@/interfaces";
 import { ref } from "vue";
 import VideoModal from "./VideoModal.vue";
 import ImageModal from "./ImageModal.vue";
+import MediaModal from "./MediaModal.vue";
 
 defineProps({
   data: {
@@ -38,16 +39,9 @@ const closeModal = () => {
     </div>
   </div>
 
-  <VideoModal
-    v-if="data.videoId"
+  <MediaModal
     :isVisible="displayModal"
     :videoId="data.videoId"
-    @close-modal="closeModal"
-  />
-
-  <ImageModal
-    v-if="!data.videoId"
-    :isVisible="displayModal"
     :image="data.image"
     @close-modal="closeModal"
   />
