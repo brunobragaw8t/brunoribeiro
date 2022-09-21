@@ -5,7 +5,10 @@ defineProps({
     required: false,
     type: String,
   },
-  image: String,
+  image: {
+    required: false,
+    type: String,
+  },
 });
 </script>
 

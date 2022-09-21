@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { usePreLoaderStore } from "@/stores/pre-loader";
 import { usePlayer } from "@vue-youtube/core";
 import MainButton from "./MainButton.vue";
-import VideoModal from "./VideoModal.vue";
+import MediaModal from "./MediaModal.vue";
 
 const preLoaderStore = usePreLoaderStore();
 
@@ -92,7 +92,7 @@ const scrollToPortfolio = () => {
     </div>
   </div>
 
-  <VideoModal
+  <MediaModal
     :isVisible="displayShowreel"
     videoId="zIV0OzjV73E"
     @close-modal="closeShowreel"
