@@ -15,7 +15,7 @@ fetch(`${apiUrl}/client/?order=desc`)
           id: item.id,
           title: item.title.rendered,
           image: item.acf.logo.url,
-          url: item.acf.url,
+          url: item.acf.site,
         });
       });
     }
@@ -27,7 +27,7 @@ fetch(`${apiUrl}/client/?order=desc`)
     <ContentWrapper>
       <div class="flex gap-5 justify-center">
         <div v-for="item in clients" :key="item.id" class="group">
-          <a v-if="item.url" :href="item.url">
+          <a v-if="item.url" :href="item.url" target="_blank">
             <img
               :src="item.image"
               :alt="item.title"
