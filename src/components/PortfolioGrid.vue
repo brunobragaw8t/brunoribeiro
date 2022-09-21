@@ -4,6 +4,7 @@ import { getYouTubeId } from "@/helpers";
 import type { Project } from "@/interfaces";
 import { ref, computed } from "vue";
 import PortfolioItem from "./PortfolioItem.vue";
+import ElementLoader from "./ElementLoader.vue";
 
 const props = defineProps({
   selectedCat: {
@@ -13,6 +14,7 @@ const props = defineProps({
 });
 
 const projects = ref([] as Array<Project>);
+const projectsLoaded = ref(false);
 
 fetch(`${apiUrl}/project/?order=desc`)
   .then((res) => res.json())
@@ -28,6 +30,8 @@ fetch(`${apiUrl}/project/?order=desc`)
         });
       });
     }
+
+    projectsLoaded.value = true;
   });
 
 const filteredProjects = computed(() => {
@@ -38,11 +42,16 @@ const filteredProjects = computed(() => {
 </script>
 
 <template>
-  <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+  <div
+    v-if="projectsLoaded"
+    class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+  >
     <PortfolioItem
       v-for="item in filteredProjects"
       :key="item.id"
       :data="item"
     />
   </div>
+
+  <ElementLoader v-else />
 </template>
