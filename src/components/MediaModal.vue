@@ -15,10 +15,17 @@ defineProps({
 <template>
   <div
     v-if="isVisible"
-    class="flex items-center justify-center fixed top-0 left-0 z-50 px-4 w-full h-full bg-black bg-opacity-75"
+    class="flex items-center justify-center fixed top-0 left-0 z-50 px-4 w-full h-full"
   >
     <div
-      :class="`relative ${videoId ? 'w-[62rem]' : 'max-w-[62rem] max-h-[90%]'}`"
+      class="absolute top-0 left-0 z-0 w-full h-full bg-black bg-opacity-75"
+      @click="$emit('closeModal')"
+    ></div>
+
+    <div
+      :class="`relative z-10 ${
+        videoId ? 'w-[62rem]' : 'max-w-[62rem] max-h-[90%]'
+      }`"
     >
       <button
         class="flex items-center justify-center absolute right-0 bottom-full w-9 h-9 group"
