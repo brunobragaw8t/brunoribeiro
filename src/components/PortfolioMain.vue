@@ -29,7 +29,7 @@ fetch(`${apiUrl}/project_category/?order=desc`)
 <template>
   <div class="py-14" id="portfolio">
     <ContentWrapper>
-      <div class="flex justify-center gap-4 mb-8">
+      <div class="flex flex-col justify-center gap-2 mb-8 sm:flex-row sm:gap-4">
         <button
           v-for="category in categories"
           :key="category.id"
