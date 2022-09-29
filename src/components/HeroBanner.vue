@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { usePreLoaderStore } from "@/stores/pre-loader";
 import { usePlayer } from "@vue-youtube/core";
 import MainButton from "./MainButton.vue";
@@ -57,6 +57,18 @@ const scrollToPortfolio = () => {
     behavior: "smooth",
   });
 };
+
+onMounted(() => {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    setTimeout(() => {
+      preLoaderStore.setLoaded();
+    }, 500);
+  }
+});
 </script>
 
 <template>
