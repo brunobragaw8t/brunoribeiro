@@ -1,1 +1,1 @@
-export const apiUrl = "http://brunoribeiro.test/wp-json/wp/v2";
+export const apiUrl = "https://brunoribeirofilm.com/bo/wp-json/wp/v2";
